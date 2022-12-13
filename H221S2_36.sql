@@ -1,21 +1,14 @@
-create database dbconsulta;
-create table informacion(
-IDINF INT AUTO_INCREMENT,
-DNIINF CHAR(8) not null, 
-APENOMINF VARCHAR(100),
-EMAINF VARCHAR(10),
-FECINF DATETIME default current_timestamp,
-DETINF text,
-ESTINF CHAR(1),
-PRIMARY KEY (IDINF)
-);
-drop table usuario;
-create table usuario(
-IDusu INT AUTO_INCREMENT,
-username CHAR(80) not null, 
-password CHAR(10),
-PRIMARY KEY (IDusu)
-);
-insert into usuario (username,password)
-values('cesar.montero@vallegrande.edu.pe','vg2022');
-select * from usuario;
+drop database ie;
+CREATE DATABASE IE;
+USE IE;
+DROP TABLE informacion;
+CREATE TABLE informacion (
+    IDINFO int AUTO_INCREMENT PRIMARY KEY NOT NULL COMMENT 'Contiene el identificador que controla el numero de informacion que se registra para su posterior respuesta.',
+    DOCINFO CHAR(12) NOT NULL COMMENT 'Contiene el numero de documento de indentidad para diferenciarlo el DNI=8 digitos y el carnet de estranjería =12 digitos',
+    APENOMINFO Varchar(80) NOT NULL COMMENT 'Contiene los apellidos y nombres del solicitante',
+    EMAINFO Varchar(80) NOT NULL COMMENT 'Contiene el correo electronico del usuario solicitante para poder dar respuesta a su pregunta.',
+    CELINFO Char(9) NOT NULL COMMENT 'Contiene el numero de celular del solicitante',
+    ASUINFO VARCHAR(200) NOT NULL COMMENT 'Contiene la informacion del asunto.',
+    FECHORINFO DATETIME NOT NULL DEFAULT current_timestamp
+     );
+   
